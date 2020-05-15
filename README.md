@@ -56,6 +56,7 @@ buffer.append('f')
 buffer.get()   # should return ['d', 'e', 'f']
 ```
 
+
 #### Task 2. Runtime Optimization
 
 ***!Important!*** If you are running this using PowerShell by clicking on the green play button, you will get an error that `names1.txt` is not found.  To resolve this, run it, get the error, then `cd` into the `names` directory in the `python` terminal that opens in VSCode.
