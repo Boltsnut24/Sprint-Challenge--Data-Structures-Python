@@ -38,12 +38,33 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
-        #base case to return what will be new head pointer
-        if node is None or node.next_node is None:
-            return node
+    def reverse_list(self, node, prev=None):
+        #empty
+        if node is None:
+            return None
 
-        #recursively walk through rest of list until we hit the end
-        node.reverse_list(node.next_node)
-        #turn pointers around
-        #return new partial list
+        #base case
+        if node.next_node is None:
+            return node
+        
+        #set head as prev pointer, new_head as rest of list
+        head = node
+        new_head = head.next_node
+
+        #recursive call, passing in next node in list
+        future_head = self.reverse_list(new_head)
+
+        #flip pointer around towards previous node
+        new_head.next_node = head
+
+        #set new_head as result of recursive call
+        new_head = future_head
+        self.head = new_head
+
+        return new_head
+
+
+
+
+        
+  
